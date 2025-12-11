@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amour Luxe - Toko Salon Terbaik</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* CSS  */
+      body {
+        background-color: #ffffff; 
+        font-family: 'Poppins', sans-serif; 
+        color: #000000; 
+        line-height: 1.6;
+        scroll-behavior: smooth; 
+      }
+      .navbar {
+        background: #000000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .navbar-brand {
+        color: #D4AF37 !important; 
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+      .navbar-brand img {
+        height: 40px; 
+        width: 40px;
+        border-radius: 50%; 
+        margin-right: 10px; 
+        object-fit: cover; 
+      }
+      .nav-link {
+        color: #D4AF37 !important; 
+        font-weight: 600;
+      }
+      .navbar-toggler {
+        border-color: #D4AF37; 
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D4AF37' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* hamburger */
+      }
+      .hero-bg {
+        background-image: url('bg.jpg');
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+        color: #ffffff; 
+        border-bottom: 2px solid #D4AF37;
+        position: relative;
+        min-height: 50vh; 
+      }
+      .hero-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); 
+        z-index: 1;
+      }
+      .hero-bg .container-fluid {
+        position: relative;
+        z-index: 2; 
+      }
+      .hero-bg h1 {
+        color: #D4AF37;
+      }
+      .hero-bg p {
+        color: #ffffff;
+      }
+      .service-card {
+        background: #ffffff; 
+        border: 1px solid #D4AF37; 
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: 400;
+        color: #000000; 
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border-color: #B8860B; 
+      }
+      .btn-primary {
+        background: #D4AF37; 
+        border: none;
+        font-weight: 600;
+        color: #000000; 
+      }
+      .btn-primary:hover {
+        background: #B8860B; 
+        color: #000000;
+      }
+      .btn-outline-secondary {
+        border-color: #D4AF37;
+        color: #D4AF37;
+        font-weight: 600;
+      }
+      .btn-outline-secondary:hover {
+        background: #D4AF37;
+        color: #000000;
+      }
+      .btn-success {
+        background: #D4AF37;
+        border: none;
+        color: #000000;
+      }
+      .btn-success:hover {
+        background: #B8860B;
+      }
+      .btn-secondary {
+        background: #666666; 
+        border: none;
+        color: #ffffff; 
+      }
+      .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .footer {
+        background: #000000; 
+        color: #D4AF37; 
+        padding: 20px 0;
+        font-weight: 300;
+      }
+      .modal-content {
+        border-radius: 15px;
+        border: 1px solid #D4AF37;
+        background: #ffffff; 
+        color: #000000; 
+      }
+      h1, h2, h3, h4 {
+        font-weight: 700; 
+        color: #000000; 
+      }
+      .lead {
+        font-weight: 300; 
+        color: #333333; 
+      }
+      .text-body-emphasis {
+        color: #000000 !important;
+      }
+      .form-label, .form-control {
+        color: #000000;
+      }
+      .form-control {
+        background: #ffffff;
+        border: 1px solid #cccccc; 
+      }
+      .form-control:focus {
+        border-color: #D4AF37; 
+        box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar dengan Hamburger Menu Responsif dan Fleksibel -->
+    <nav class="navbar navbar-expand-lg navbar-dark"> 
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="Logo Amour Luxe"> 
+          Amour Luxe
+        </a>
+        <!-- Toggle Button (Hamburger Menu) - Aktif -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> 
+        </button>
+        <!-- Menu Navigasi -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Banner dengan Background Gambar -->
+    <div class="hero-bg" id="home">
+      <div class="container-fluid p-5 text-center">
+        <h1>Selamat Datang di Amour Luxe</h1>
+        <p>Tempat terbaik untuk perawatan kecantikan dan relaksasi.</p>
+      </div>
+    </div>
+
+    <!-- Kolom Layanan -->
+    <div class="container mt-5" id="services">
+      <h2 class="text-center mb-4" style="color: #D4AF37;">Layanan Kami</h2>
+      <div class="row">
+        <div class="col-sm-4 mb-4">
+          <div class="service-card p-3 text-center">
+            <h3>Potong Rambut</h3>
+            <ul class="list-unstyled">
+              <li>Potong Rambut Wanita (Rp 50.000)</li>
+              <li>Potong + Cuci (Rp 80.000)</li>
+              <li>Styling Rambut (Rp 40.000)</li>
+              <li>Warna Rambut (Rp 100.000)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4 mb-4">
+          <div class="service-card p-3 text-center">
+            <h3>Perawatan Wajah</h3>
+            <ul class="list-unstyled">
+              <li>Facial Basic (Rp 80.000)</li>
+              <li>Facial Premium (Rp 150.000)</li>
+              <li>Cleansing Wajah (Rp 60.000)</li>
+              <li>Masker Wajah (Rp 70.000)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4 mb-4">
+          <div class="service-card p-3 text-center">
+            <h3>Pijat Relaksasi</h3>
+            <ul class="list-unstyled">
+              <li>Pijat Punggung (Rp 90.000)</li>
+              <li>Pijat Badan Full (Rp 120.000)</li>
+              <li>Reflexology (Rp 100.000)</li>
+              <li>Pijat Aromaterapi (Rp 110.000)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Galeri -->
+    <div id="demo" class="carousel slide mt-5">
+      <h2 class="text-center mb-4" style="color: #D4AF37;">Galeri Salon</h2>
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="interior.jpg" alt="Interior Salon" class="d-block w-100" />
+        </div>
+        <div class="carousel-item">
+          <img src="stylingg.jpg" alt="Layanan Potong Rambut/Styling" class="d-block w-100" />
+        </div>
+        <div class="carousel-item">
+          <img src="facial.jpg" alt="Perawatan Wajah" class="d-block w-100" />
+        </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- Booking Modal Trigger -->
+    <div class="container mt-5 text-center">
+      <h3>Booking Layanan</h3>
+      <p>Klik tombol di bawah untuk memesan layanan salon kami.</p>
+      <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">
+        Buka Form Booking
+      </button>
+    </div>
+
+    <!-- The Modal Booking -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Form Booking Layanan</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda" required>
+              </div>
+              <div class="mb-3">
+                <label for="service" class="form-label">Pilih Layanan</label>
+                <select class="form-select" id="service" required>
+                  <option value="">Pilih layanan</option>
+                  <option value="haircut">Potong Rambut</option>
+                  <option value="facial">Perawatan Wajah</option>
+                  <option value="massage">Pijat Relaksasi</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Tanggal Booking</label>
+                <input type="date" class="form-control" id="date" required>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            <button type="button" class="btn btn-success">Kirim Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="hasil.jpg" class="d-block mx-lg-auto img-fluid" alt="AmourLuxe" width="700" height="500" loading="lazy" />
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+            Temukan Kecantikan Anda di Salon Elegance
+          </h1>
+          <p class="lead">
+            Kami menawarkan layanan perawatan kecantikan terdepan dengan produk berkualitas dan tim ahli yang siap membantu Anda merasa cantik dan percaya diri. Dari potong rambut hingga perawatan wajah, semua dalam satu tempat.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="#services" class="btn btn-primary btn-lg px-4 me-md-2">Lihat Layanan</a>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#contactModal">Hubungi Kami</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Kontak -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title" id="contactModalLabel">Hubungi Kami</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Masukkan nama Anda" required>
+              </div>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="contactEmail" placeholder="Masukkan email Anda" required>
+              </div>
+              <div class="mb-3">
+                <label for="contactMessage" class="form-label">Pesan</label>
+                <textarea class="form-control" id="contactMessage" rows="4" placeholder="Tulis pesan Anda di sini" required></textarea>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            <button type="button" class="btn btn-success">Kirim Pesan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center" id="contact">
+      <div class="container">
+        <p>&copy; 2023 Amour Luxe. Semua hak dilindungi.</p>
+        <p>Alamat: Jl. Kecantikan No. 123, Kota Semarang | Telepon: (021) 123-4567 | Email: info@amourluxe.com</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
